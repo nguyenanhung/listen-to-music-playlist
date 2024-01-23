@@ -1,0 +1,24 @@
+{
+    "description": "Project Listen to Music Playlist",
+    "name": "nguyenanhung/listen-to-music-playlist",
+    "type": "project",
+    "license": "GPL-3.0-only",
+    "homepage": "https://github.com/nguyenanhung/listen-to-music-playlist",
+    "authors": [
+        {
+            "name": "Nguyen An Hung",
+            "email": "dev@nguyenanhung.com",
+            "homepage": "https://nguyenanhung.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1 || ^8.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-simplexml": "*",
+        "ext-libxml": "*",
+        "nguyenanhung/codeigniter-framework": "^3.2"
+    }
+}
