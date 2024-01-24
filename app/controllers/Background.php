@@ -94,8 +94,8 @@ class Background extends HungNG_CI_Base_Controllers
 	{
 		$location_id = trim($location_id);
 		$githubApi = self::GITHUB_REPO_API . $location_id;
-//		$fetchData = sendSimpleGetRequest($githubApi);
-		$fetchData = file_get_contents($githubApi);
+		$fetchData = sendSimpleGetRequest($githubApi);
+//		$fetchData = file_get_contents($githubApi);
 		$jsonData = json_decode($fetchData);
 		if ($jsonData === null) {
 			return [];

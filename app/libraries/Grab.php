@@ -98,33 +98,33 @@ class Grab
 	 */
 	protected function sendRequest(string $url = '', $data = array(), string $method = 'GET')
 	{
-        return file_get_contents($url);
-//		$method = mb_strtoupper($method);
-//		try {
-//			$curl = new SimpleCurl();
-//			$curl->setCookieFileLocation(__DIR__ . '/../files/cookies.txt');
-//			if ($method === 'POST') {
-//				$curl->setPost($data)->createCurl($url);
-//			} elseif ($method === 'JSON') {
-//				$curl->setJson($data)->createCurl($url);
-//			} elseif ($method === 'XML') {
-//				$curl->setXml($data)->createCurl($url);
-//			} else {
-//				$endpoint = !empty($data) ? $url . '?' . http_build_query($data) : $url;
-//				$curl->createCurl($endpoint);
-//			}
-//			$response = $curl->__toString();
-//			$error = $curl->isError();
-//			$errorMessage = $curl->getError();
-//			$result = $error === true ? $errorMessage : $response;
-//			$curl->closeCurl();
-//
-//			return $result;
-//		} catch (Exception $e) {
-//			log_message('error', __get_error_message__($e));
-//			log_message('error', __get_error_trace__($e));
-//
-//			return null;
-//		}
+//        return file_get_contents($url);
+		$method = mb_strtoupper($method);
+		try {
+			$curl = new SimpleCurl();
+			$curl->setCookieFileLocation(__DIR__ . '/../files/cookies.txt');
+			if ($method === 'POST') {
+				$curl->setPost($data)->createCurl($url);
+			} elseif ($method === 'JSON') {
+				$curl->setJson($data)->createCurl($url);
+			} elseif ($method === 'XML') {
+				$curl->setXml($data)->createCurl($url);
+			} else {
+				$endpoint = !empty($data) ? $url . '?' . http_build_query($data) : $url;
+				$curl->createCurl($endpoint);
+			}
+			$response = $curl->__toString();
+			$error = $curl->isError();
+			$errorMessage = $curl->getError();
+			$result = $error === true ? $errorMessage : $response;
+			$curl->closeCurl();
+
+			return $result;
+		} catch (Exception $e) {
+			log_message('error', __get_error_message__($e));
+			log_message('error', __get_error_trace__($e));
+
+			return null;
+		}
 	}
 }
