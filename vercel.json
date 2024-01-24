@@ -15,6 +15,10 @@
         {
             "src": "/(.*)",
             "dest": "/api/index.php"
+        },
+        {
+            "src": "/den-(:any)-va-nghe-nhac-(:any)",
+            "dest": "/api/index.php/home/playlist/$1/$2"
         }
     ]
 }
