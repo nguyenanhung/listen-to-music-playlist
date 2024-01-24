@@ -83,7 +83,8 @@ class Home extends HungNG_CI_Base_Controllers
 			redirect();
 		}
 
-		$uriString = 'den-' . $locationId . '-va-nghe-nhac-' . $musicId;
+//		$uriString = 'den-' . $locationId . '-va-nghe-nhac-' . $musicId;
+		$uriString = 'home/playlist/' . $locationId . '/' . $musicId;
 		$playlistData = $listPlaylist[$musicId];
 
 		$data = array(
@@ -94,7 +95,7 @@ class Home extends HungNG_CI_Base_Controllers
 			'list_location_id' => $listLocationId,
 			'list_playlist' => $listPlaylist,
 			'page_title' => 'Đến ' . $listLocation[$locationId]['name'] . ' và nghe nhạc ' . $playlistData['name'],
-			'canonical_url' => site_url($uriString),
+			'canonical_url' => base_url($uriString),
 			'current_location_db' => $listLocation[$locationId],
 			'current_location' => $locationId,
 			'current_playlist' => $musicId,
