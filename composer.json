@@ -2,7 +2,7 @@
     "description": "Project Listen to Music Playlist",
     "name": "nguyenanhung/listen-to-music-playlist",
     "type": "project",
-    "license": "GPL-3.0-only",
+    "license": "MIT",
     "homepage": "https://github.com/nguyenanhung/listen-to-music-playlist",
     "authors": [
         {
