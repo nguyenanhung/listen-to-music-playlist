@@ -4,50 +4,51 @@ defined('BASEPATH') or exit('No direct script access allowed');
  * @var object $sites
  * @var object $author
  * @var object $tracking
- * @var mixed  $list_playlist
- * @var mixed  $list_location_id
- * @var mixed  $list_location
- * @var mixed  $page_title
- * @var mixed  $canonical_url
- * @var mixed  $background_js
- * @var mixed  $playlist_js
+ * @var mixed $list_playlist
+ * @var mixed $list_location_id
+ * @var mixed $list_location
+ * @var mixed $page_title
+ * @var mixed $canonical_url
+ * @var mixed $background_js
+ * @var mixed $playlist_js
  */
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml" lang="vi">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"
+      lang="vi">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title><?= $page_title ?> - <?= $sites->site_name ?></title>
     <!-- DNS Prefetch -->
-    <link href='//fonts.googleapis.com' rel='dns-prefetch' />
-    <link href='//cdnjs.cloudflare.com' rel='dns-prefetch' />
-    <link href='//i0.wp.com' rel='dns-prefetch' />
-    <link href='//i1.wp.com' rel='dns-prefetch' />
-    <link href='//i2.wp.com' rel='dns-prefetch' />
-    <link href='//i3.wp.com' rel='dns-prefetch' />
-    <meta name="description" content="<?= $page_title ?> - <?= $sites->site_name ?>" />
-    <meta name="keywords" content="<?= $sites->keywords ?>" />
-    <meta content="Hung Nguyen" name="author" />
-    <meta name="robots" content="index,follow,nocache,noodp" />
-    <meta name='revisit-after' content='1 days' />
-    <meta property="og:title" content="<?= $page_title ?> - <?= $sites->site_name ?>" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="<?= $canonical_url ?>" />
-    <meta property="og:image" content="<?= $image_src ?? assets_url('mp3/relax.jpg') ?>" />
-    <meta property="og:site_name" content="<?= $sites->site_name ?>" />
-    <meta property="og:description" content="<?= $page_title ?> - <?= $sites->site_name ?>" />
-    <link href="<?= $author->facebook ?>" rel="author" />
+    <link href='//fonts.googleapis.com' rel='dns-prefetch'/>
+    <link href='//cdnjs.cloudflare.com' rel='dns-prefetch'/>
+    <link href='//i0.wp.com' rel='dns-prefetch'/>
+    <link href='//i1.wp.com' rel='dns-prefetch'/>
+    <link href='//i2.wp.com' rel='dns-prefetch'/>
+    <link href='//i3.wp.com' rel='dns-prefetch'/>
+    <meta name="description" content="<?= $page_title ?> - <?= $sites->site_name ?>"/>
+    <meta name="keywords" content="<?= $sites->keywords ?>"/>
+    <meta content="Hung Nguyen" name="author"/>
+    <meta name="robots" content="index,follow,nocache,noodp"/>
+    <meta name='revisit-after' content='1 days'/>
+    <meta property="og:title" content="<?= $page_title ?> - <?= $sites->site_name ?>"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="<?= $canonical_url ?>"/>
+    <meta property="og:image" content="<?= $image_src ?? github_static_url('assets/images/music-relax.jpg') ?>"/>
+    <meta property="og:site_name" content="<?= $sites->site_name ?>"/>
+    <meta property="og:description" content="<?= $page_title ?> - <?= $sites->site_name ?>"/>
+    <link href="<?= $author->facebook ?>" rel="author"/>
     <?php $this->load->view('favicon'); ?>
-    <link href="<?= assets_url('css/font-awesome.min.css') ?>" rel="stylesheet" />
+    <link href="<?= assets_url('css/font-awesome.min.css') ?>" rel="stylesheet"/>
     <!--[if IE 7]>
     <link href="<?= assets_url('css/font-awesome-ie7.min.css') ?>" rel="stylesheet" />
     <![endif]-->
-    <link href="<?= assets_url('css/quankhuya.css') ?>" rel="stylesheet" />
-    <link href="<?= assets_url('css/jplayer.pink.flag.css') ?>" rel="stylesheet" />
-    <link href="<?= assets_url('css/pink-modified.css') ?>" rel="stylesheet" />
-    <link href="<?= assets_url('css/supersized.css') ?>" rel="stylesheet" type="text/css" media="screen" />
-    <link href="<?= assets_url('css/index.css') ?>" rel="stylesheet" type="text/css" media="screen" />
+    <link href="<?= assets_url('css/quankhuya.css') ?>" rel="stylesheet"/>
+    <link href="<?= assets_url('css/jplayer.pink.flag.css') ?>" rel="stylesheet"/>
+    <link href="<?= assets_url('css/pink-modified.css') ?>" rel="stylesheet"/>
+    <link href="<?= assets_url('css/supersized.css') ?>" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="<?= assets_url('css/index.css') ?>" rel="stylesheet" type="text/css" media="screen"/>
     <script type="text/javascript" src="<?= assets_url('js/jquery-1.9.1.min.js') ?>"></script>
     <script type="text/javascript" src="<?= assets_url('js/jquery.idTabs.min.js') ?>"></script>
     <script type="text/javascript" src="<?= assets_url('js/jquery.jplayer.min.js') ?>"></script>
@@ -67,7 +68,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
     <?php if (isset($current_location_db['media_files'])) { ?>
         <audio id="backgroundAudio" autoplay="autoplay" loop="loop" preload="auto">
-            <source src="<?= trim($current_location_db['media_files']) ?>" type="audio/mpeg" />
+            <source src="<?= trim($current_location_db['media_files']) ?>" type="audio/mpeg"/>
             Trình duyệt của bạn không hỗ trợ HTML/audio template
         </audio>
         <script>
@@ -122,12 +123,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <ul id="list-menu-selection">
     <li>
         <a class="tab-click-item" href="#my-player">
-            <img src="<?= assets_url('images/playlist_icon.png') ?>" alt="" />
+            <img src="<?= assets_url('images/playlist_icon.png') ?>" alt=""/>
         </a>
     </li><!--/player-->
 
     <li>
-        <a class="tab-click-item" href="#show-comment"><img src="<?= assets_url('images/comment_icon.png') ?>" alt="" />
+        <a class="tab-click-item" href="#show-comment"><img src="<?= assets_url('images/comment_icon.png') ?>" alt=""/>
             <div class="noti_bubble">
                 <fb:comments-count href="<?= $canonical_url ?>">0</fb:comments-count>
             </div>
@@ -142,7 +143,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 </ul>
 
-      <!-- Phần content chính kết thúc ở đây -->
+<!-- Phần content chính kết thúc ở đây -->
 
 <div class="tab-container">
     <div id="tab-close" class="tab-close">
@@ -175,7 +176,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </div><!--/change style-->
 
     <div class="tab-item" id="show-comment">
-        <div class="fb-comments" data-href="<?= $canonical_url ?>" data-width="280" data-num-posts="5" data-colorscheme="light"></div>
+        <div class="fb-comments" data-href="<?= $canonical_url ?>" data-width="280" data-num-posts="5"
+             data-colorscheme="light"></div>
     </div><!--/khung comment-->
 
     <div id="my-player" class="my-player tab-item">
@@ -192,7 +194,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
                         <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
                         <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
-                        <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+                        <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a>
+                        </li>
                     </ul>
                     <div class="jp-progress">
                         <div class="jp-seek-bar">
@@ -206,9 +209,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="jp-duration"></div>
                     <ul class="jp-toggles">
                         <li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>
-                        <li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a></li>
+                        <li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle
+                                off</a></li>
                         <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
-                        <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+                        <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -229,7 +234,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </div>
 
 <div class="fanpage-like">
-    <div class="fb-like" data-href="<?= $canonical_url ?>" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+    <div class="fb-like" data-href="<?= $canonical_url ?>" data-layout="standard" data-action="like" data-size="small"
+         data-show-faces="true" data-share="true"></div>
 </div><!--/fanpage-like-->
 
 <script type="text/javascript" src="<?= assets_url('js/main.js') ?>"></script>
