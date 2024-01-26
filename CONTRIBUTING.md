@@ -9,6 +9,8 @@
 
 Hệ thống được xây dựng và phát triển bởi các thành viên sau
 
-| Name        | Email                | Skype            | Facebook      |
-|-------------|----------------------|------------------|---------------|
-| Hung Nguyen | dev@nguyenanhung.com | nguyenanhung5891 | @nguyenanhung |
+| Name        | Email                | GitHub        | Facebook      |
+|-------------|----------------------|---------------|---------------|
+| Hung Nguyen | dev@nguyenanhung.com | @nguyenanhung | @nguyenanhung |
+
+From 🐼 Bear Family with Love ♥️

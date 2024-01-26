@@ -1,4 +1,4 @@
-### Project mp3.nguyenanhung.com
+### Project Bear MP3
 
 Project trang nhạc Playlist nghe theo gu
 
@@ -10,21 +10,18 @@ Nghe nhạc và ngắm cảnh đẹp :)
 
 Link Demo: [https://mp3.nguyenanhung.com](https://mp3.nguyenanhung.com)
 
-Link Demo: [https://mp3.nguyenanhung.com/album/den-vau.html](https://mp3.nguyenanhung.com/album/den-vau.html)
+Link Demo: [https://bear-mp3.vercel.app/](https://bear-mp3.vercel.app/)
 
 Demo
 
 ![Demo](https://i.imgur.com/xkilOSe.jpg)
 
 ## Liên hệ
-Mọi ý kiến đóng góp và phản hồi, xin liên hệ về
 
-Name: Hung Nguyen
+| Name        | Email                | GitHub        | Facebook      |
+|-------------|----------------------|---------------|---------------|
+| Hung Nguyen | dev@nguyenanhung.com | @nguyenanhung | @nguyenanhung |
 
-Email: dev@nguyenanhung.com
-
-Facebook: https://fb.com/iam.hungng
-
-Msg: https://m.me/iam.hungng
+From 🐼 Bear Family with Love ♥️
 
 
