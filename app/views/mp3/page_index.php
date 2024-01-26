@@ -35,7 +35,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <meta property="og:title" content="<?= $page_title ?> - <?= $sites->site_name ?>"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="<?= $canonical_url ?>"/>
-    <meta property="og:image" content="<?= $image_src ?? github_static_url('assets/images/music-relax.jpg') ?>"/>
+    <meta property="og:image" content="<?= $image_src ?? 'https://live.staticflickr.com/65535/53489162535_39924d3c58_k.jpg' ?>"/>
     <meta property="og:site_name" content="<?= $sites->site_name ?>"/>
     <meta property="og:description" content="<?= $page_title ?> - <?= $sites->site_name ?>"/>
     <link href="<?= $author->facebook ?>" rel="author"/>

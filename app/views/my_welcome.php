@@ -285,7 +285,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </script>
 <script type='text/javascript' src='<?= cdn_js_url('jquery-backstretch/2.0.4/jquery.backstretch.min.js') ?>'></script>
 <script>
-    $.backstretch("https://i3.wp.com/nguyenanhung.com/assets/background-resize/51216896771_dcfa722a89_o.jpeg", {speed: 500});
+    $.backstretch("https://live.staticflickr.com/65535/53487848737_b9d11a688e_o.jpg", {speed: 500});
 </script>
 </body>
 </html>
