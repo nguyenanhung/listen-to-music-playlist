@@ -25,8 +25,8 @@ $config['assets_version'] = '?version=2.1.3';
 |
 */
 if (ENVIRONMENT === 'production') {
-    $config['base_url'] = 'https://quankhuya-mp3.vercel.app/';
-    $config['asset_url'] = 'https://quankhuya-mp3.vercel.app/';
+    $config['base_url'] = 'https://bear-mp3.vercel.app/';
+    $config['asset_url'] = 'https://bear-mp3.vercel.app/';
 } else {
     $config['base_url'] = 'http://mp3.nguyenanhung.io/';
     $config['asset_url'] = 'http://mp3.nguyenanhung.io/';
