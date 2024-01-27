@@ -9,9 +9,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  */
 class Background extends HungNG_CI_Base_Controllers
 {
-    const GITHUB_REPO_API = 'https://api.github.com/repositories/740265525/contents/assets/background/';
-    const GITHUB_STATIC_DOMAIN = 'https://hungna.github.io/';
-    const FOLDER_JSON_BACKGROUND = '';
+    const GITHUB_STATIC_API_JSON = 'https://hungna.github.io/api/json/';
     const TPL_FOLDER = 'mp3/';
 
     /**
@@ -55,7 +53,7 @@ class Background extends HungNG_CI_Base_Controllers
             $itemLocation = $listLocation[$locationId];
 
             if (isset($itemLocation['with_github']) && $itemLocation['with_github'] === true) {
-                $listImages = $this->_parseWithGitHub($locationId);
+                $listImages = $this->_parseBackgroundWithGitHubJson($locationId);
             } elseif (isset($itemLocation['self_host_folder'])) {
                 $listImages = directory_map(FCPATH . trim($itemLocation['self_host_folder']));
             } else {
@@ -83,28 +81,23 @@ class Background extends HungNG_CI_Base_Controllers
     }
 
     /**
-     * Function _parseWithGitHub
+     * Function _parseBackgroundWithGitHubJson
      *
      * @param string $location_id
      * User: 713uk13m <dev@nguyenanhung.com>
      * Copyright: 713uk13m <dev@nguyenanhung.com>
      * @return array
      */
-    private function _parseWithGitHub(string $location_id = ''): array
+    private function _parseBackgroundWithGitHubJson(string $location_id = ''): array
     {
         $location_id = trim($location_id);
-        $githubApi = self::GITHUB_REPO_API . $location_id;
+        $githubApi = self::GITHUB_STATIC_API_JSON . 'background/' . $location_id . '.json';
         $fetchData = sendSimpleGetRequest($githubApi);
-//		$fetchData = file_get_contents($githubApi);
-        $jsonData = json_decode($fetchData);
-        if ($jsonData === null) {
+        $jsonData = json_decode($fetchData, true);
+        if ($jsonData === null || !isset($jsonData['data'])) {
             return [];
         }
-        $data = array();
-        foreach ($jsonData as $item) {
-            $data[] = self::GITHUB_STATIC_DOMAIN . $item->path;
-        }
-        return $data;
+        return $jsonData['data'];
     }
 
     /**
