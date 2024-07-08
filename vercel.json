@@ -1,24 +1,20 @@
 {
-    "version": 2,
-    "framework": null,
-    "functions": {
-        "api/**/*.php": {
-            "runtime": "vercel-php@0.6.1"
-        }
+  "version": 2,
+  "framework": null,
+  "functions": {
+    "api/**/*.php": {
+      "runtime": "vercel-php@0.6.1"
+    }
+  },
+  "outputDirectory": "public",
+  "routes": [
+    {
+      "src": "/assets/(background|css|favicon|font|images|js|media|mp3)/(.*)",
+      "dest": "assets/$1/$2"
     },
-    "outputDirectory": "public",
-    "routes": [
-        {
-            "src": "/assets/(background|css|favicon|font|images|js|media|mp3)/(.*)",
-            "dest": "assets/$1/$2"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/api/index.php"
-        },
-        {
-            "src": "/den-(:any)-va-nghe-nhac-(:any)",
-            "dest": "/api/index.php/home/playlist/$1/$2"
-        }
-    ]
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php?/$1"
+    }
+  ]
 }

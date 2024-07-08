@@ -14,7 +14,7 @@ Link Demo: [https://bear-mp3.vercel.app/](https://bear-mp3.vercel.app/)
 
 Demo
 
-![Demo](https://i.imgur.com/xkilOSe.jpg)
+![Demo](https://i.postimg.cc/P51FBFkK/Screenshot-2024-07-08-at-09-55-20.png)
 
 ## Liên hệ
 

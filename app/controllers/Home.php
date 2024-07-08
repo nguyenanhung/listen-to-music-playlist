@@ -1,4 +1,5 @@
 <?php
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
@@ -83,8 +84,8 @@ class Home extends HungNG_CI_Base_Controllers
             redirect();
         }
 
-//		$uriString = 'den-' . $locationId . '-va-nghe-nhac-' . $musicId;
-        $uriString = 'home/playlist/' . $locationId . '/' . $musicId;
+        $uriString = 'den-' . $locationId . '-va-nghe-nhac-' . $musicId;
+//        $uriString = 'home/playlist/' . $locationId . '/' . $musicId;
         $playlistData = $listPlaylist[$musicId];
 
         $data = array(
@@ -207,7 +208,9 @@ class Home extends HungNG_CI_Base_Controllers
             }
         }
 
-        $this->output->set_status_header()->set_content_type('application/json')->set_output(json_encode($response))->_display();
+        $this->output->set_status_header()->set_content_type('application/json')->set_output(
+            json_encode($response)
+        )->_display();
         exit();
     }
 }
