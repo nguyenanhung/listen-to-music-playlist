@@ -26,8 +26,8 @@ $(document).ready(function () {
             return;
         }
 
-        // document.location.href = "" + base_url + "den-" + $(".location-tag.selected").attr("tag-id") + "-va-nghe-nhac-" + $(".music-tag.selected").attr("tag-id") + ".html";
-        document.location.href = "" + base_url + "home/playlist/" + $(".location-tag.selected").attr("tag-id") + "/" + $(".music-tag.selected").attr("tag-id");
+        document.location.href = "" + base_url + "den-" + $(".location-tag.selected").attr("tag-id") + "-va-nghe-nhac-" + $(".music-tag.selected").attr("tag-id");
+        // document.location.href = "" + base_url + "home/playlist/" + $(".location-tag.selected").attr("tag-id") + "/" + $(".music-tag.selected").attr("tag-id");
     });
 });
 //facebook apps
