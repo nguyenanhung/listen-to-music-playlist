@@ -1,7 +1,8 @@
 <?php
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
-$config['assets_version'] = '?version=2.1.4';
+$config['assets_version'] = '?version=2.1.5';
 /*
 |--------------------------------------------------------------------------
 | Base Site URL

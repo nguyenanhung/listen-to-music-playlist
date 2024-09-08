@@ -1,4 +1,5 @@
 <?php
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
@@ -41,8 +42,14 @@ defined('DIR_WRITE_MODE') or define('DIR_WRITE_MODE', 0755);
 */
 defined('FOPEN_READ') or define('FOPEN_READ', 'rb');
 defined('FOPEN_READ_WRITE') or define('FOPEN_READ_WRITE', 'r+b');
-defined('FOPEN_WRITE_CREATE_DESTRUCTIVE') or define('FOPEN_WRITE_CREATE_DESTRUCTIVE', 'wb'); // truncates existing file data, use with care
-defined('FOPEN_READ_WRITE_CREATE_DESTRUCTIVE') or define('FOPEN_READ_WRITE_CREATE_DESTRUCTIVE', 'w+b'); // truncates existing file data, use with care
+defined('FOPEN_WRITE_CREATE_DESTRUCTIVE') or define(
+    'FOPEN_WRITE_CREATE_DESTRUCTIVE',
+    'wb'
+); // truncates existing file data, use with care
+defined('FOPEN_READ_WRITE_CREATE_DESTRUCTIVE') or define(
+    'FOPEN_READ_WRITE_CREATE_DESTRUCTIVE',
+    'w+b'
+); // truncates existing file data, use with care
 defined('FOPEN_WRITE_CREATE') or define('FOPEN_WRITE_CREATE', 'ab');
 defined('FOPEN_READ_WRITE_CREATE') or define('FOPEN_READ_WRITE_CREATE', 'a+b');
 defined('FOPEN_WRITE_CREATE_STRICT') or define('FOPEN_WRITE_CREATE_STRICT', 'xb');
@@ -92,5 +99,10 @@ defined('TELEGRAM_JARVIS_BOT') or define('TELEGRAM_JARVIS_BOT', [
         'default_chat_id' => MY_TELEGRAM_ID
     ]
 ]);
-defined('DEFAULT_CACHE_ADAPTER') or define('DEFAULT_CACHE_ADAPTER', ['adapter' => 'apcu', 'backup' => 'file']);
-defined('DEFAULT_CACHE_PREFIX') or define('DEFAULT_CACHE_PREFIX', 'BEAR_MP3_PLAYLIST_2024_01_11_');
+defined('CACHE_KEY') or define('CACHE_KEY', 'Bear-MP3-Playlist-on-Vercel-Cache-2024-09-08-');
+defined('GLOBAL_CACHE_PREFIX') or define('GLOBAL_CACHE_PREFIX', CACHE_KEY);
+defined('DEFAULT_CACHE_PREFIX') or define('DEFAULT_CACHE_PREFIX', CACHE_KEY);
+defined('DEFAULT_CACHE_ADAPTER') or define('DEFAULT_CACHE_ADAPTER', [
+    'adapter' => 'apcu',
+    'backup' => 'file'
+]);
