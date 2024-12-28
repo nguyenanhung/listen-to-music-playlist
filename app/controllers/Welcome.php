@@ -1,4 +1,5 @@
 <?php
+
 defined('BASEPATH') or exit('No direct script access allowed');
 /**
  * Project listen-to-music-playlist
@@ -39,6 +40,7 @@ class Welcome extends HungNG_CI_Base_Controllers
      */
     public function index()
     {
+        $this->output->cache(60 * 24 * 30);
         $this->load->view(
             'my_welcome',
             [

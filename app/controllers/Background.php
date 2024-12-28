@@ -1,4 +1,5 @@
 <?php
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
@@ -44,7 +45,8 @@ class Background extends HungNG_CI_Base_Controllers
             exit();
         }
 
-        $this->output->set_status_header()->set_content_type('application/x-javascript', 'utf-8');
+        $this->output->set_status_header()->set_content_type('application/x-javascript', 'utf-8')
+            ->cache(60);
 
         $data = array();
         $listLocation = config_item('list_location');
@@ -71,8 +73,6 @@ class Background extends HungNG_CI_Base_Controllers
             } else {
                 $data['location_data'] = null;
             }
-
-
         } else {
             $data['location_data'] = null;
         }
@@ -111,8 +111,13 @@ class Background extends HungNG_CI_Base_Controllers
      *
      * @return null|string
      */
-    private function _parseData(string $title = 'IMG', array $arrayData = array(), bool $withGitHub = false, bool $selfHost = false, string $selfHostFolder = '')
-    {
+    private function _parseData(
+        string $title = 'IMG',
+        array $arrayData = array(),
+        bool $withGitHub = false,
+        bool $selfHost = false,
+        string $selfHostFolder = ''
+    ) {
         if (!is_array($arrayData)) {
             return null;
         }
@@ -121,13 +126,18 @@ class Background extends HungNG_CI_Base_Controllers
 
         foreach ($arrayData as $key => $item) {
             if ($withGitHub === true) {
-                $result .= '{image: "' . trim(trim($item)) . '",title: "' . trim($title) . ' ' . ($key + 1) . '",thumb: "' . trim(trim($item)) . '",url: ""},';
+                $result .= '{image: "' . trim(trim($item)) . '",title: "' . trim(
+                        $title
+                    ) . ' ' . ($key + 1) . '",thumb: "' . trim(trim($item)) . '",url: ""},';
             } elseif ($selfHost === true) {
-                $result .= '{image: "' . trim(base_url($selfHostFolder . trim($item))) . '",title: "' . trim($title) . ' ' . ($key + 1) . '",thumb: "' . trim(base_url($selfHostFolder . trim($item))) . '",url: ""},';
+                $result .= '{image: "' . trim(base_url($selfHostFolder . trim($item))) . '",title: "' . trim(
+                        $title
+                    ) . ' ' . ($key + 1) . '",thumb: "' . trim(base_url($selfHostFolder . trim($item))) . '",url: ""},';
             } else {
-                $result .= '{image: "' . trim(trim($item)) . '",title: "' . trim($title) . ' ' . ($key + 1) . '",thumb: "' . trim(trim($item)) . '",url: ""},';
+                $result .= '{image: "' . trim(trim($item)) . '",title: "' . trim(
+                        $title
+                    ) . ' ' . ($key + 1) . '",thumb: "' . trim(trim($item)) . '",url: ""},';
             }
-
         }
 
         return trim($result, ',');
