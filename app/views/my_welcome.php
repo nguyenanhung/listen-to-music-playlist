@@ -55,7 +55,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
     <!-- Resource -->
     <link href="<?= bootstrapcdn_url('3.2.0/css/bootstrap.min.css') ?>" rel="stylesheet">
-    <link href='<?= cdn_js_url('font-awesome/4.7.0/css/font-awesome.min.css') ?>' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             background-color: #F2F2F2;
@@ -231,10 +231,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </head>
 <body>
 <div id="clouds">
-    <img class="cloud1" src="https://hungna.github.io/assets/themes/clouds/assets/clouds/cloud-1.png" alt="Cloud-1" />
-    <img class="cloud2" src="https://hungna.github.io/assets/themes/clouds/assets/clouds/cloud-2.png" alt="Cloud-2" />
-    <img class="cloud3" src="https://hungna.github.io/assets/themes/clouds/assets/clouds/cloud-3.png" alt="Cloud-3" />
-    <img class="cloud4" src="https://hungna.github.io/assets/themes/clouds/assets/clouds/cloud-4.png" alt="Cloud-4" />
+    <img class="cloud1" src="https://s1.nguyenanhung.com/assets/themes/clouds/assets/clouds/cloud-1.png" alt="Cloud-1" />
+    <img class="cloud2" src="https://s1.nguyenanhung.com/assets/themes/clouds/assets/clouds/cloud-2.png" alt="Cloud-2" />
+    <img class="cloud3" src="https://s1.nguyenanhung.com/assets/themes/clouds/assets/clouds/cloud-3.png" alt="Cloud-3" />
+    <img class="cloud4" src="https://s1.nguyenanhung.com/assets/themes/clouds/assets/clouds/cloud-4.png" alt="Cloud-4" />
 </div>
 
 <div class="site_content">
@@ -275,7 +275,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </div>
 
 <!-- JS Scripts -->
-<script src="<?= cdn_js_url('jquery/3.7.0/jquery.min.js') ?>"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="<?= bootstrapcdn_url('3.2.0/js/bootstrap.min.js') ?>"></script>
 <script>
     $('.tooltip-demo').tooltip({
@@ -283,9 +283,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
         container: "body"
     })
 </script>
-<script type='text/javascript' src='<?= cdn_js_url('jquery-backstretch/2.0.4/jquery.backstretch.min.js') ?>'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js" integrity="sha512-jWdKG05DTyeAwBWDCEhvPVglV1O8HSaa1hrOevKBuF/QellHl8VSEmyLsoARD+5PgkDut5xIcHvQgiqCDbXQfw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-    $.backstretch("https://live.staticflickr.com/65535/53487848737_b9d11a688e_o.jpg", {speed: 500});
+    $.backstretch("https://i3.wp.com/live.staticflickr.com/65535/53487848737_b9d11a688e_o.jpg", {speed: 500});
 </script>
 </body>
 </html>

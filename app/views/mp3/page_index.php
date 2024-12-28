@@ -1,4 +1,5 @@
 <?php
+
 defined('BASEPATH') or exit('No direct script access allowed');
 /**
  * @var object $sites
@@ -35,14 +36,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <meta property="og:title" content="<?= $page_title ?> - <?= $sites->site_name ?>"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="<?= $canonical_url ?>"/>
-    <meta property="og:image" content="<?= $image_src ?? 'https://live.staticflickr.com/65535/53489162535_39924d3c58_k.jpg' ?>"/>
+    <meta property="og:image"
+          content="<?= $image_src ?? 'https://live.staticflickr.com/65535/53489162535_39924d3c58_k.jpg' ?>"/>
     <meta property="og:site_name" content="<?= $sites->site_name ?>"/>
     <meta property="og:description" content="<?= $page_title ?> - <?= $sites->site_name ?>"/>
     <link href="<?= $author->facebook ?>" rel="author"/>
-    <?php $this->load->view('favicon'); ?>
-    <link href="<?= assets_url('css/font-awesome.min.css') ?>" rel="stylesheet"/>
+    <?php
+    $this->load->view('favicon'); ?>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.0.2/css/font-awesome.min.css"
+          integrity="sha512-8JmjytQRBs3ZfZSZbPWtcIUhBeHfeCuWJft1HfZITst9QZ6z15X600LufOZy8c9IWBxg4Yga8sqV+nUOhpRQ4w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <!--[if IE 7]>
-    <link href="<?= assets_url('css/font-awesome-ie7.min.css') ?>" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.0.2/css/font-awesome-ie7.min.css"
+          integrity="sha512-DCNM+tJBuuUjj7hnAadlsH4ibeUIpXr5+mXwdVk2F5HRMML4iO1/scIMmpXkkk8ArIvvXBcDwMJ1CJmIRbkJog=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <![endif]-->
     <link href="<?= assets_url('css/quankhuya.css') ?>" rel="stylesheet"/>
     <link href="<?= assets_url('css/jplayer.pink.flag.css') ?>" rel="stylesheet"/>
@@ -66,7 +73,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <div id="fb-root"></div>
 <div class="nguyenanhung-wrapper">
 
-    <?php if (isset($current_location_db['media_files'])) { ?>
+    <?php
+    if (isset($current_location_db['media_files'])) { ?>
         <audio id="backgroundAudio" autoplay="autoplay" loop="loop" preload="auto">
             <source src="<?= trim($current_location_db['media_files']) ?>" type="audio/mpeg"/>
             Trình duyệt của bạn không hỗ trợ HTML/audio template
@@ -75,7 +83,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
             var backgroundAudioControl = document.getElementById("backgroundAudio");
             backgroundAudioControl.volume = 0.5;
         </script>
-    <?php } ?>
+        <?php
+    } ?>
 
     <script type="text/javascript" src="<?= $background_js ?>"></script>
 
@@ -156,7 +165,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <div class="choice-tag">
                 <?php
                 foreach ($list_location as $key => $value) {
-                    echo '<div tag-id="' . trim($key) . '" class="item location-tag">' . trim($value['name']) . '</div>';
+                    echo '<div tag-id="' . trim($key) . '" class="item location-tag">' . trim(
+                                    $value['name']
+                            ) . '</div>';
                 }
                 ?>
             </div><!--/choice-tag - địa điểm -->
@@ -243,8 +254,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </html>
 <!--
     - A production of Hung Nguyen <dev@nguyenanhung.com>
-    - This is relax time and not Commerce product
-    - URL: https://mp3.nguyenanhung.com
+    - This is relaxed time and not Commerce product
+    - URL: https://bear-mp3.vercel.app
     - Page generation time: {elapsed_time}
     - Memory usage: {memory_usage}
  -->
