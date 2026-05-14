@@ -71,13 +71,13 @@ switch (ENVIRONMENT) {
     case 'testing':
     case 'production':
         error_reporting(-1);
-        ini_set('display_errors', 1);
-//        ini_set('display_errors', 0);
-//        if (PHP_VERSION_ID >= 50300) {
-//            error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
-//        } else {
-//            error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_USER_NOTICE);
-//        }
+//        ini_set('display_errors', 1);
+        ini_set('display_errors', 0);
+        if (PHP_VERSION_ID >= 50300) {
+            error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
+        } else {
+            error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_USER_NOTICE);
+        }
         break;
     default:
         header('HTTP/1.1 503 Service Unavailable.', true, 503);
